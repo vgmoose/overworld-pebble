@@ -1,0 +1,46 @@
+
+{"friendlyVersion": "VERSION",
+ "versionDefName": "VERSION",
+ "media": [
+           {
+           "type": "png-trans",
+           "defName": "MC_UP",
+           "file": "u.png"
+           },
+           {
+           "type": "png-trans",
+           "defName": "MC_UP_M",
+           "file": "um.png"
+           },
+           {
+           "type": "png-trans",
+           "defName": "MC_LEFT",
+           "file": "l.png"
+           },
+           {
+           "type": "png-trans",
+           "defName": "MC_LEFT_M",
+           "file": "lm.png"
+           },
+           {
+           "type": "png-trans",
+           "defName": "MC_DOWN",
+           "file": "d.png"
+           },
+           {
+           "type": "png-trans",
+           "defName": "MC_DOWN_M",
+           "file": "dm.png"
+           },
+           {
+           "type": "png-trans",
+           "defName": "MC_RIGHT",
+           "file": "r.png"
+           },
+           {
+           "type": "png-trans",
+           "defName": "MC_RIGHT_M",
+           "file": "rm.png"
+           }
+	  ]
+}
