@@ -20,29 +20,135 @@ int white_char[] = {RESOURCE_ID_MC_LEFT_WHITE, RESOURCE_ID_MC_DOWN_WHITE, RESOUR
 
 int black_char[] = {RESOURCE_ID_MC_LEFT_BLACK, RESOURCE_ID_MC_DOWN_BLACK, RESOURCE_ID_MC_RIGHT_BLACK, RESOURCE_ID_MC_UP_BLACK};
 
+int current_direction = 0;
+
+int x_coor = 32, y_coor = 32;
+
+bool walk = false;
+
+AppContextRef real_ctx;
 
 
 void handle_timer(AppContextRef ctx, AppTimerHandle handle, uint32_t cookie) {
     
     // This implementation assumes only one type of timer used in the app.
-    current_layer_angle = (current_layer_angle + 90) % 360;
-
+    current_layer_angle = 90 % 360;
+    
+    GRect frame = layer_get_frame(&bitmap_container.layer.layer);
+        
+    layer_remove_from_parent(&bitmap_container.layer.layer);
+    rotbmp_pair_deinit_container(&bitmap_container);
+    
+    rotbmp_pair_init_container(white_char[current_direction], black_char[current_direction], &bitmap_container);
+    
     // This will automatically mark the layer dirty and update it.
+    
+    if (walk)
+    {
+        x_coor += -1*(current_direction==0) + (current_direction==2);
+        y_coor += -1*(current_direction==3) + (current_direction==1);
+        
+        app_timer_send_event(real_ctx, 50, 0);
+    }
+    
+    frame = layer_get_frame(&bitmap_container.layer.layer);
+    frame.origin.x = x_coor;
+    frame.origin.y = y_coor;
+    layer_set_frame(&bitmap_container.layer.layer, frame);
+    
+    layer_add_child(&hourglass_layer, &bitmap_container.layer.layer);
+
+   // layer_mark_dirty(&bitmap_container);
     rotbmp_pair_layer_set_angle(&bitmap_container.layer, TRIG_MAX_ANGLE * current_layer_angle / 360);
+
+    
+    
+   // layer_mark_dirty(&bitmap_container.layer);
+
     
    // app_timer_send_event(ctx, 50 /* milliseconds */, cookie);
     
 }
 
+void turnChar(int turnValue)
+{
+//    if (current_direction <= 1)
+//        turnValue *= -1;
+    
+    current_direction = (current_direction+turnValue)%4;
+    
+    if (current_direction <0)
+        current_direction = 3;
+    
+    if (!walk)
+        app_timer_send_event(real_ctx, 50 /* milliseconds */, 0 /* Not using a cookie value */);
+
+}
+
+
+void handle_deinit(AppContextRef ctx) {
+    
+    rotbmp_pair_deinit_container(&bitmap_container);
+}
+
+void toggleWalk()
+{
+    walk = !walk;
+    
+    if (walk)
+        app_timer_send_event(real_ctx, 50 /* milliseconds */, 0 /* Not using a cookie value */);
+}
+
+
+// Modify these common button handlers
+void up_single_click_handler(ClickRecognizerRef recognizer, Window *window) {
+    (void)recognizer;
+    (void)window;
+    
+    turnChar(1);
+    
+}
+
+void select_single_click_handler(ClickRecognizerRef recognizer, Window *window) {
+    (void)recognizer;
+    (void)window;
+    
+    toggleWalk();
+}
+
+void down_single_click_handler(ClickRecognizerRef recognizer, Window *window) {
+    (void)recognizer;
+    (void)window;
+    
+    turnChar(-1);
+}
+
+
+// This usually won't need to be modified
+
+void click_config_provider(ClickConfig **config, Window *window) {
+    (void)window;
+    
+    config[BUTTON_ID_UP]->click.handler = (ClickHandler) up_single_click_handler;
+    config[BUTTON_ID_UP]->click.repeat_interval_ms = 100;
+    
+    config[BUTTON_ID_SELECT]->click.handler = (ClickHandler) select_single_click_handler;
+    config[BUTTON_ID_SELECT]->click.repeat_interval_ms = 100;
+    
+    config[BUTTON_ID_DOWN]->click.handler = (ClickHandler) down_single_click_handler;
+    config[BUTTON_ID_DOWN]->click.repeat_interval_ms = 100;
+
+}
+
 
 void handle_init(AppContextRef ctx) {
-
-  window_init(&window, "Overworld");
-  window_stack_push(&window, true /* Animated */);
+    
+    window_init(&window, "Overworld");
+    window_stack_push(&window, true /* Animated */);
     
     resource_init_current_app(&VERSION);
     
-    rotbmp_pair_init_container(white_char[1], black_char[1], &bitmap_container);
+    rotbmp_pair_init_container(white_char[current_direction], black_char[current_direction], &bitmap_container);
     
     GRect framey = GRect(10, 10, 100, 100);
     
@@ -53,21 +159,19 @@ void handle_init(AppContextRef ctx) {
     
     // layer_add_child(&window.layer, &bitmap_container.layer.layer);
     
+    real_ctx = ctx;
     
     // Start the animation.
     app_timer_send_event(ctx, 50 /* milliseconds */, 0 /* Not using a cookie value */);
-
-}
-
-
-void handle_deinit(AppContextRef ctx) {
     
-    rotbmp_pair_deinit_container(&bitmap_container);
+    window_set_click_config_provider(&window, (ClickConfigProvider) click_config_provider);
+    
+    
 }
-
 
 
 void pbl_main(void *params) {
+    window_set_fullscreen(&window, true);
   PebbleAppHandlers handlers = {
     .init_handler = &handle_init,
       .deinit_handler = &handle_deinit,
