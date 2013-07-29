@@ -518,206 +518,218 @@ LOAD /Users/Ricky/pebble-dev/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.6.3/thu
                 0x00000000000001b8                handle_deinit
 
 .text.handle_timer
-                0x00000000000001cc      0x12c
+                0x00000000000001cc      0x184
  .text.handle_timer
-                0x00000000000001cc      0x12c src/overworld-pebble.c.1.o
+                0x00000000000001cc      0x184 src/overworld-pebble.c.1.o
                 0x00000000000001cc                handle_timer
 
-.text.turnChar  0x00000000000002f8       0x5c
- .text.turnChar
-                0x00000000000002f8       0x5c src/overworld-pebble.c.1.o
-                0x00000000000002f8                turnChar
-
-.text.down_single_click_handler
-                0x0000000000000354        0x8
- .text.down_single_click_handler
-                0x0000000000000354        0x8 src/overworld-pebble.c.1.o
-                0x0000000000000354                down_single_click_handler
-
-.text.up_single_click_handler
-                0x000000000000035c        0x6
- .text.up_single_click_handler
-                0x000000000000035c        0x6 src/overworld-pebble.c.1.o
-                0x000000000000035c                up_single_click_handler
-
 .text.toggleWalk
-                0x0000000000000364       0x34
+                0x0000000000000350       0x34
  .text.toggleWalk
-                0x0000000000000364       0x34 src/overworld-pebble.c.1.o
-                0x0000000000000364                toggleWalk
+                0x0000000000000350       0x34 src/overworld-pebble.c.1.o
+                0x0000000000000350                toggleWalk
 
 .text.select_single_click_handler
-                0x0000000000000398        0x4
+                0x0000000000000384        0x4
  .text.select_single_click_handler
-                0x0000000000000398        0x4 src/overworld-pebble.c.1.o
-                0x0000000000000398                select_single_click_handler
+                0x0000000000000384        0x4 src/overworld-pebble.c.1.o
+                0x0000000000000384                select_single_click_handler
 
-.text.pbl_main  0x000000000000039c       0x50
+.text.turnChar  0x0000000000000388       0x88
+ .text.turnChar
+                0x0000000000000388       0x88 src/overworld-pebble.c.1.o
+                0x0000000000000388                turnChar
+
+.text.down_single_click_handler
+                0x0000000000000410        0x8
+ .text.down_single_click_handler
+                0x0000000000000410        0x8 src/overworld-pebble.c.1.o
+                0x0000000000000410                down_single_click_handler
+
+.text.up_single_click_handler
+                0x0000000000000418        0x6
+ .text.up_single_click_handler
+                0x0000000000000418        0x6 src/overworld-pebble.c.1.o
+                0x0000000000000418                up_single_click_handler
+
+.text.pbl_main  0x0000000000000420       0x50
  .text.pbl_main
-                0x000000000000039c       0x50 src/overworld-pebble.c.1.o
-                0x000000000000039c                pbl_main
+                0x0000000000000420       0x50 src/overworld-pebble.c.1.o
+                0x0000000000000420                pbl_main
 
 .text.app_timer_send_event
-                0x00000000000003ec        0xc
+                0x0000000000000470        0xc
  .text.app_timer_send_event
-                0x00000000000003ec        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
-                0x00000000000003ec                app_timer_send_event
+                0x0000000000000470        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
+                0x0000000000000470                app_timer_send_event
 
 .text.app_event_loop
-                0x00000000000003f8        0xc
+                0x000000000000047c        0xc
  .text.app_event_loop
-                0x00000000000003f8        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
-                0x00000000000003f8                app_event_loop
+                0x000000000000047c        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
+                0x000000000000047c                app_event_loop
 
 .text.layer_remove_from_parent
-                0x0000000000000404        0xc
+                0x0000000000000488        0xc
  .text.layer_remove_from_parent
-                0x0000000000000404        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
-                0x0000000000000404                layer_remove_from_parent
+                0x0000000000000488        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
+                0x0000000000000488                layer_remove_from_parent
 
 .text.layer_add_child
-                0x0000000000000410        0xc
+                0x0000000000000494        0xc
  .text.layer_add_child
-                0x0000000000000410        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
-                0x0000000000000410                layer_add_child
+                0x0000000000000494        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
+                0x0000000000000494                layer_add_child
 
 .text.layer_get_frame
-                0x000000000000041c        0xc
+                0x00000000000004a0        0xc
  .text.layer_get_frame
-                0x000000000000041c        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
-                0x000000000000041c                layer_get_frame
+                0x00000000000004a0        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
+                0x00000000000004a0                layer_get_frame
 
 .text.layer_set_frame
-                0x0000000000000428        0xc
+                0x00000000000004ac        0xc
  .text.layer_set_frame
-                0x0000000000000428        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
-                0x0000000000000428                layer_set_frame
+                0x00000000000004ac        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
+                0x00000000000004ac                layer_set_frame
 
 .text.layer_init
-                0x0000000000000434        0xc
+                0x00000000000004b8        0xc
  .text.layer_init
-                0x0000000000000434        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
-                0x0000000000000434                layer_init
+                0x00000000000004b8        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
+                0x00000000000004b8                layer_init
 
 .text.resource_init_current_app
-                0x0000000000000440        0xc
+                0x00000000000004c4        0xc
  .text.resource_init_current_app
-                0x0000000000000440        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
-                0x0000000000000440                resource_init_current_app
+                0x00000000000004c4        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
+                0x00000000000004c4                resource_init_current_app
 
 .text.rotbmp_pair_deinit_container
-                0x000000000000044c        0xc
+                0x00000000000004d0        0xc
  .text.rotbmp_pair_deinit_container
-                0x000000000000044c        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
-                0x000000000000044c                rotbmp_pair_deinit_container
+                0x00000000000004d0        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
+                0x00000000000004d0                rotbmp_pair_deinit_container
 
 .text.rotbmp_pair_init_container
-                0x0000000000000458        0xc
+                0x00000000000004dc        0xc
  .text.rotbmp_pair_init_container
-                0x0000000000000458        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
-                0x0000000000000458                rotbmp_pair_init_container
+                0x00000000000004dc        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
+                0x00000000000004dc                rotbmp_pair_init_container
 
 .text.rotbmp_pair_layer_set_angle
-                0x0000000000000464        0xc
+                0x00000000000004e8        0xc
  .text.rotbmp_pair_layer_set_angle
-                0x0000000000000464        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
-                0x0000000000000464                rotbmp_pair_layer_set_angle
+                0x00000000000004e8        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
+                0x00000000000004e8                rotbmp_pair_layer_set_angle
 
 .text.window_init
-                0x0000000000000470        0xc
+                0x00000000000004f4        0xc
  .text.window_init
-                0x0000000000000470        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
-                0x0000000000000470                window_init
+                0x00000000000004f4        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
+                0x00000000000004f4                window_init
 
 .text.window_stack_push
-                0x000000000000047c        0xc
+                0x0000000000000500        0xc
  .text.window_stack_push
-                0x000000000000047c        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
-                0x000000000000047c                window_stack_push
+                0x0000000000000500        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
+                0x0000000000000500                window_stack_push
 
 .text.window_set_click_config_provider
-                0x0000000000000488        0xc
+                0x000000000000050c        0xc
  .text.window_set_click_config_provider
-                0x0000000000000488        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
-                0x0000000000000488                window_set_click_config_provider
+                0x000000000000050c        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
+                0x000000000000050c                window_set_click_config_provider
 
 .text.window_set_fullscreen
-                0x0000000000000494        0xc
+                0x0000000000000518        0xc
  .text.window_set_fullscreen
-                0x0000000000000494        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
-                0x0000000000000494                window_set_fullscreen
+                0x0000000000000518        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
+                0x0000000000000518                window_set_fullscreen
 
-.text.memset    0x00000000000004a0        0xc
- .text.memset   0x00000000000004a0        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
-                0x00000000000004a0                memset
+.text.memset    0x0000000000000524        0xc
+ .text.memset   0x0000000000000524        0xc /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
+                0x0000000000000524                memset
 
-.rel.dyn        0x00000000000004ac        0x0
+.rel.dyn        0x0000000000000530        0x0
  .rel.iplt      0x0000000000000000        0x0 /Users/Ricky/pebble-dev/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.6.3/thumb2/crti.o
  .rel.got       0x0000000000000000        0x0 /Users/Ricky/pebble-dev/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.6.3/thumb2/crti.o
 
-.data           0x00000000000004ac        0x4
+.data           0x0000000000000530        0x4
  *(.data)
- .data          0x00000000000004ac        0x0 /Users/Ricky/pebble-dev/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.6.3/thumb2/crti.o
- .data          0x00000000000004ac        0x4 /Users/Ricky/pebble-dev/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.6.3/thumb2/crtbegin.o
-                0x00000000000004ac                __dso_handle
- .data          0x00000000000004b0        0x0 src/overworld-pebble.c.1.o
- .data          0x00000000000004b0        0x0 /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
- .data          0x00000000000004b0        0x0 /Users/Ricky/pebble-dev/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.6.3/thumb2/crtend.o
- .data          0x00000000000004b0        0x0 /Users/Ricky/pebble-dev/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.6.3/thumb2/crtn.o
+ .data          0x0000000000000530        0x0 /Users/Ricky/pebble-dev/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.6.3/thumb2/crti.o
+ .data          0x0000000000000530        0x4 /Users/Ricky/pebble-dev/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.6.3/thumb2/crtbegin.o
+                0x0000000000000530                __dso_handle
+ .data          0x0000000000000534        0x0 src/overworld-pebble.c.1.o
+ .data          0x0000000000000534        0x0 /Users/Ricky/Downloads/overworld-pebble/lib/libpebble.a(tmpHZgwt9pebble_os.o)
+ .data          0x0000000000000534        0x0 /Users/Ricky/pebble-dev/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.6.3/thumb2/crtend.o
+ .data          0x0000000000000534        0x0 /Users/Ricky/pebble-dev/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.6.3/thumb2/crtn.o
 
-.igot.plt       0x00000000000004b0        0x0
+.igot.plt       0x0000000000000534        0x0
  .igot.plt      0x0000000000000000        0x0 /Users/Ricky/pebble-dev/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.6.3/thumb2/crti.o
 
-.got            0x00000000000004b0       0x10
- .got           0x00000000000004b0       0x10 /Users/Ricky/pebble-dev/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.6.3/thumb2/crti.o
+.got            0x0000000000000534       0x10
+ .got           0x0000000000000534       0x10 /Users/Ricky/pebble-dev/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.6.3/thumb2/crti.o
 
-.got.plt        0x00000000000004c0        0xc
- .got.plt       0x00000000000004c0        0xc /Users/Ricky/pebble-dev/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.6.3/thumb2/crti.o
-                0x00000000000004c0                _GLOBAL_OFFSET_TABLE_
+.got.plt        0x0000000000000544        0xc
+ .got.plt       0x0000000000000544        0xc /Users/Ricky/pebble-dev/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.6.3/thumb2/crti.o
+                0x0000000000000544                _GLOBAL_OFFSET_TABLE_
 
 .data.white_char
-                0x00000000000004cc       0x10
+                0x0000000000000550       0x10
  .data.white_char
-                0x00000000000004cc       0x10 src/overworld-pebble.c.1.o
-                0x00000000000004cc                white_char
+                0x0000000000000550       0x10 src/overworld-pebble.c.1.o
+                0x0000000000000550                white_char
 
-.data.y_coor    0x00000000000004dc        0x4
- .data.y_coor   0x00000000000004dc        0x4 src/overworld-pebble.c.1.o
-                0x00000000000004dc                y_coor
+.data.y_coor    0x0000000000000560        0x4
+ .data.y_coor   0x0000000000000560        0x4 src/overworld-pebble.c.1.o
+                0x0000000000000560                y_coor
 
-.data.x_coor    0x00000000000004e0        0x4
- .data.x_coor   0x00000000000004e0        0x4 src/overworld-pebble.c.1.o
-                0x00000000000004e0                x_coor
+.data.x_coor    0x0000000000000564        0x4
+ .data.x_coor   0x0000000000000564        0x4 src/overworld-pebble.c.1.o
+                0x0000000000000564                x_coor
+
+.data.black_move
+                0x0000000000000568       0x10
+ .data.black_move
+                0x0000000000000568       0x10 src/overworld-pebble.c.1.o
+                0x0000000000000568                black_move
 
 .data.black_char
-                0x00000000000004e4       0x10
+                0x0000000000000578       0x10
  .data.black_char
-                0x00000000000004e4       0x10 src/overworld-pebble.c.1.o
-                0x00000000000004e4                black_char
+                0x0000000000000578       0x10 src/overworld-pebble.c.1.o
+                0x0000000000000578                black_char
 
-.bss            0x00000000000004f4      0x154
+.data.white_move
+                0x0000000000000588       0x10
+ .data.white_move
+                0x0000000000000588       0x10 src/overworld-pebble.c.1.o
+                0x0000000000000588                white_move
+
+.bss            0x0000000000000598      0x154
  *(.bss)
- COMMON         0x00000000000004f4      0x154 src/overworld-pebble.c.1.o
-                0x00000000000004f4                real_ctx
-                0x00000000000004f8                bitmap_container
-                0x00000000000005c8                hourglass_layer
-                0x00000000000005f0                window
+ COMMON         0x0000000000000598      0x154 src/overworld-pebble.c.1.o
+                0x0000000000000598                real_ctx
+                0x000000000000059c                bitmap_container
+                0x000000000000066c                hourglass_layer
+                0x0000000000000694                window
 
 .bss.current_direction
-                0x0000000000000648        0x4
+                0x00000000000006ec        0x4
  .bss.current_direction
-                0x0000000000000648        0x4 src/overworld-pebble.c.1.o
-                0x0000000000000648                current_direction
+                0x00000000000006ec        0x4 src/overworld-pebble.c.1.o
+                0x00000000000006ec                current_direction
 
-.bss.walk       0x000000000000064c        0x1
- .bss.walk      0x000000000000064c        0x1 src/overworld-pebble.c.1.o
-                0x000000000000064c                walk
+.bss.walk       0x00000000000006f0        0x1
+ .bss.walk      0x00000000000006f0        0x1 src/overworld-pebble.c.1.o
+                0x00000000000006f0                walk
 
 .bss.current_layer_angle
-                0x0000000000000650        0x4
+                0x00000000000006f4        0x4
  .bss.current_layer_angle
-                0x0000000000000650        0x4 src/overworld-pebble.c.1.o
-                0x0000000000000650                current_layer_angle
+                0x00000000000006f4        0x4 src/overworld-pebble.c.1.o
+                0x00000000000006f4                current_layer_angle
 
 DISCARD
  libc.a(*)
@@ -747,15 +759,15 @@ OUTPUT(/Users/Ricky/Downloads/overworld-pebble/build/pebble-app.elf elf32-little
  .comment       0x0000000000000000       0x4f src/overworld-pebble.c.1.o
  .comment       0x0000000000000000       0x4f /Users/Ricky/pebble-dev/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.6.3/thumb2/crtend.o
 
-.debug_line     0x0000000000000000      0x347
+.debug_line     0x0000000000000000      0x399
  .debug_line    0x0000000000000000       0x71 /Users/Ricky/pebble-dev/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.6.3/thumb2/crti.o
- .debug_line    0x0000000000000071      0x261 src/overworld-pebble.c.1.o
- .debug_line    0x00000000000002d2       0x75 /Users/Ricky/pebble-dev/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.6.3/thumb2/crtn.o
+ .debug_line    0x0000000000000071      0x2b3 src/overworld-pebble.c.1.o
+ .debug_line    0x0000000000000324       0x75 /Users/Ricky/pebble-dev/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.6.3/thumb2/crtn.o
 
-.debug_info     0x0000000000000000     0x1648
+.debug_info     0x0000000000000000     0x166d
  .debug_info    0x0000000000000000       0xb2 /Users/Ricky/pebble-dev/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.6.3/thumb2/crti.o
- .debug_info    0x00000000000000b2     0x14e4 src/overworld-pebble.c.1.o
- .debug_info    0x0000000000001596       0xb2 /Users/Ricky/pebble-dev/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.6.3/thumb2/crtn.o
+ .debug_info    0x00000000000000b2     0x1509 src/overworld-pebble.c.1.o
+ .debug_info    0x00000000000015bb       0xb2 /Users/Ricky/pebble-dev/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.6.3/thumb2/crtn.o
 
 .debug_abbrev   0x0000000000000000      0x23f
  .debug_abbrev  0x0000000000000000       0x12 /Users/Ricky/pebble-dev/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.6.3/thumb2/crti.o
@@ -775,12 +787,12 @@ OUTPUT(/Users/Ricky/Downloads/overworld-pebble/build/pebble-app.elf elf32-little
  .debug_ranges  0x0000000000000020       0x58 src/overworld-pebble.c.1.o
  .debug_ranges  0x0000000000000078       0x20 /Users/Ricky/pebble-dev/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.6.3/thumb2/crtn.o
 
-.debug_loc      0x0000000000000000      0x18d
- .debug_loc     0x0000000000000000      0x18d src/overworld-pebble.c.1.o
+.debug_loc      0x0000000000000000      0x1b8
+ .debug_loc     0x0000000000000000      0x1b8 src/overworld-pebble.c.1.o
 
-.debug_str      0x0000000000000000      0xe69
- .debug_str     0x0000000000000000      0xe69 src/overworld-pebble.c.1.o
-                                        0xf35 (size before relaxing)
+.debug_str      0x0000000000000000      0xe7f
+ .debug_str     0x0000000000000000      0xe7f src/overworld-pebble.c.1.o
+                                        0xf4b (size before relaxing)
 
-.debug_frame    0x0000000000000000       0xe0
- .debug_frame   0x0000000000000000       0xe0 src/overworld-pebble.c.1.o
+.debug_frame    0x0000000000000000       0xec
+ .debug_frame   0x0000000000000000       0xec src/overworld-pebble.c.1.o

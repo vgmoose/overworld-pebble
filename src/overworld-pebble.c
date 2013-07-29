@@ -20,6 +20,10 @@ int white_char[] = {RESOURCE_ID_MC_LEFT_WHITE, RESOURCE_ID_MC_DOWN_WHITE, RESOUR
 
 int black_char[] = {RESOURCE_ID_MC_LEFT_BLACK, RESOURCE_ID_MC_DOWN_BLACK, RESOURCE_ID_MC_RIGHT_BLACK, RESOURCE_ID_MC_UP_BLACK};
 
+int white_move[] = {RESOURCE_ID_MC_LEFT_M_WHITE, RESOURCE_ID_MC_DOWN_M_WHITE, RESOURCE_ID_MC_RIGHT_M_WHITE, RESOURCE_ID_MC_UP_M_WHITE};
+
+int black_move[] = {RESOURCE_ID_MC_LEFT_M_BLACK, RESOURCE_ID_MC_DOWN_M_BLACK, RESOURCE_ID_MC_RIGHT_M_BLACK, RESOURCE_ID_MC_UP_M_BLACK};
+
 int current_direction = 0;
 
 int x_coor = 32, y_coor = 32;
@@ -39,17 +43,18 @@ void handle_timer(AppContextRef ctx, AppTimerHandle handle, uint32_t cookie) {
     layer_remove_from_parent(&bitmap_container.layer.layer);
     rotbmp_pair_deinit_container(&bitmap_container);
     
-    rotbmp_pair_init_container(white_char[current_direction], black_char[current_direction], &bitmap_container);
-    
-    // This will automatically mark the layer dirty and update it.
-    
-    if (walk)
+    if (walk || x_coor%16!=0 || y_coor%16!=0)
     {
-        x_coor += -1*(current_direction==0) + (current_direction==2);
-        y_coor += -1*(current_direction==3) + (current_direction==1);
+        x_coor += -2*(current_direction==0) + 2*(current_direction==2);
+        y_coor += -2*(current_direction==3) + 2*(current_direction==1);
         
         app_timer_send_event(real_ctx, 50, 0);
+        
+        rotbmp_pair_init_container(white_move[current_direction], black_move[current_direction], &bitmap_container);
+
     }
+    else
+        rotbmp_pair_init_container(white_char[current_direction], black_char[current_direction], &bitmap_container);
     
     frame = layer_get_frame(&bitmap_container.layer.layer);
     frame.origin.x = x_coor;
@@ -70,27 +75,6 @@ void handle_timer(AppContextRef ctx, AppTimerHandle handle, uint32_t cookie) {
     
 }
 
-void turnChar(int turnValue)
-{
-//    if (current_direction <= 1)
-//        turnValue *= -1;
-    
-    current_direction = (current_direction+turnValue)%4;
-    
-    if (current_direction <0)
-        current_direction = 3;
-    
-    if (!walk)
-        app_timer_send_event(real_ctx, 50 /* milliseconds */, 0 /* Not using a cookie value */);
-
-}
-
-
-void handle_deinit(AppContextRef ctx) {
-    
-    rotbmp_pair_deinit_container(&bitmap_container);
-}
-
 void toggleWalk()
 {
     walk = !walk;
@@ -99,6 +83,42 @@ void toggleWalk()
         app_timer_send_event(real_ctx, 50 /* milliseconds */, 0 /* Not using a cookie value */);
 }
 
+
+
+void turnChar(int turnValue)
+{
+//    if (current_direction <= 1)
+//        turnValue *= -1;
+    
+    if (!walk)
+    {
+        if (x_coor%16==0 && y_coor%16==0)
+        {
+            current_direction = (current_direction+turnValue)%4;
+            
+            if (current_direction <0)
+                current_direction = 3;
+            
+            app_timer_send_event(real_ctx, 50 /* milliseconds */, 0 /* Not using a cookie value */);
+        }
+        else
+        {
+            turnChar(turnValue);
+        }
+    } else
+    {
+        toggleWalk();
+        turnChar(turnValue);
+        
+    }
+
+}
+
+
+void handle_deinit(AppContextRef ctx) {
+    
+    rotbmp_pair_deinit_container(&bitmap_container);
+}
 
 // Modify these common button handlers
 void up_single_click_handler(ClickRecognizerRef recognizer, Window *window) {
